@@ -1,7 +1,7 @@
 const baseURL = "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets";
 const limit = 20;
 
-export const fetchEspaceVerts = (pageNum) => {
+export const fetchEspaceVerts = (pageNum = 0) => {
   const url =
     `${baseURL}/ilots-de-fraicheur-espaces-verts-frais/records` +
     (pageNum !== undefined ? `?limit=${limit}&offset=${pageNum * limit}` : "");
@@ -14,7 +14,7 @@ export const fetchEspaceVerts = (pageNum) => {
     });
 };
 
-export const fetchFontaines = (pageNum) => {
+export const fetchFontaines = (pageNum = 0) => {
   const url =
     `${baseURL}/fontaines-a-boire/records` +
     (pageNum !== undefined ? `?limit=${limit}&offset=${pageNum * limit}` : "");
@@ -27,7 +27,7 @@ export const fetchFontaines = (pageNum) => {
     });
 };
 
-export const fetchActivité = (pageNum) => {
+export const fetchActivité = (pageNum = 0) => {
   const url =
     `${baseURL}/ilots-de-fraicheur-equipements-activites/records` +
     (pageNum !== undefined ? `?limit=${limit}&offset=${pageNum * limit}` : "");
